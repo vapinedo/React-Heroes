@@ -1,10 +1,8 @@
 import './App.css';
+import { AppRouter } from '@app/AppRouter';
 
 export function App() {
   return (
-      <main className='container-lg main-wrapper'>
-          <h3>Heroes</h3>
-          <hr />
-      </main>
+    <AppRouter />
   );
 }
