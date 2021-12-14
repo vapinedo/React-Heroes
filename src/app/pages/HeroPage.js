@@ -21,10 +21,10 @@ export const HeroPage = () => {
     return (
         <div className='row mt-4'>
             <div className="col-4">
-                <img src={imagePath} className="img-thumbnail" alt={hero.superhero} />
+                <img src={imagePath} className="img-thumbnail animate__animated animate__fadeInLeft" alt={hero.superhero} />
             </div>
 
-            <div className="col-8">
+            <div className="col-8 animate__animated animate__fadeIn">
                 <h4>{hero.superhero}</h4>
                 <ul className="list-group">
                     <li className="list-group-item"><b>Alter ego:</b> {hero.alter_ego}</li>
