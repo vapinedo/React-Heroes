@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { getHeroById } from '@models/HeroModel';
 
 export const HeroPage = () => {
 
-    const navigate = useNavigate();
-
-    const goBack = () => {
-        navigate(-1);
-    };
-
     const { id } = useParams();
-    const hero = getHeroById(id);
+    const hero = useMemo(() => getHeroById(id), [id]); 
     const imagePath = `/assets/${hero.id}.jpg`;
+    
+    const navigate = useNavigate();
+    const goBack = () => {
+        const pageBefore = -1;
+        navigate(pageBefore);
+    };
 
     if(!hero) {
         return <Navigate to="/" />
