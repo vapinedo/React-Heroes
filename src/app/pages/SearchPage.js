@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import queryString from "query-string";
 import { useForm } from '@hooks/useForm';
 import { HeroCard } from '@components/HeroCard';
@@ -14,7 +14,7 @@ export const SearchPage = () => {
     const [state, inputChange] = useForm({ termToSearch: q });
     const { termToSearch } = state;
 
-    const heroesFiltered = getHeroByName(q);
+    const heroesFiltered = useMemo(() => getHeroByName(q), [q]);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -45,6 +45,14 @@ export const SearchPage = () => {
 
                 <div className="col-7">
                     <p>Results</p>
+
+                    {
+                        (q === "") 
+                            ? <div className="alert alert-info">Hero search</div>
+                            : (heroesFiltered.length === 0) &&
+                            <div className="alert alert-info">No result for <strong>{q}</strong></div>
+                    }
+
                     {heroesFiltered.map(hero => (
                         <HeroCard key={hero.id} hero={hero} />
                     ))}

@@ -7,7 +7,7 @@ export const HeroCard = ({ hero }) => {
     
     return (
 
-        <div className="col-md-4">
+        <div className="col-md-4 animate__animated animate__fadeIn">
             <div className="card h-100">
                 <img src={imagePath} className="card-img" alt={hero.superhero} />
 
