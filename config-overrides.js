@@ -5,6 +5,7 @@ module.exports = function override(config) {
         "@app": "src/app",
         "@data": "src/app/data",
         "@hooks": "src/app/hooks",
+        "@types": "src/app/types",
         "@pages": "src/app/pages",
         "@models": "src/app/models",
         "@routers": "src/app/routers",
