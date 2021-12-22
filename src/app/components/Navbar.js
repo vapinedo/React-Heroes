@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '@auth/authContext';
+import { types } from "@types/types";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const logout = () => {
+        dispatch({ type: types.logout });
         navigate("/login", { replace: true });
     };
     
