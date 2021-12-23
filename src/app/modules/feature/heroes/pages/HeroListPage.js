@@ -1,8 +1,8 @@
-import { getHeroByPublisher } from "@models/HeroModel"
-import { HeroCard } from "@components/HeroCard";
 import { useMemo } from "react";
+import { HeroCard } from "@feature/heroes/components/HeroCard";
+import { getHeroByPublisher } from "@core/services/HeroService";
 
-export const HeroList = ({ publisher }) => {
+export const HeroListPage = ({ publisher }) => {
 
     const heroes = useMemo(() => getHeroByPublisher(publisher), [publisher]);
     

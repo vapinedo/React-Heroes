@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { AuthContext } from "@auth/authContext";
 import { Navigate } from "react-router-dom";
+import { AuthContext } from "@core/context/auth/authContext";
 
-export const PublicRoute = ({ children }) => {
-    
+export const LoginGuard = ({ children }) => {
     const { user } = useContext(AuthContext);
     return user.logged ? <Navigate to="/marvel" /> : children;
 }

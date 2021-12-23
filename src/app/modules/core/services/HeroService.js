@@ -1,4 +1,4 @@
-import { heroes } from "@data/heroes";
+import { heroes } from "@core/mocks/heroes-mock";
 
 export const getHeroByPublisher = (publisher) => {
     const validPublishers = ["DC Comics", "Marvel Comics"];

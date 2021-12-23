@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import { DcPage } from "@pages/DcPage";
-import { Navbar } from "@components/Navbar";
-import { HeroPage } from "@pages/HeroPage";
-import { MarvelPage } from "@pages/MarvelPage";
-import { SearchPage } from "@pages/SearchPage";
+import { DcPage } from "@feature/heroes/pages/DcPage";
+import { Navbar } from "@shared/components/Navbar";
+import { MarvelPage } from "@feature/heroes/pages/MarvelPage";
+import { SearchPage } from "@feature/search/pages/SearchPage";
+import { HeroDetailPage } from "@feature/heroes/pages/HeroDetailPage";
 
-export const DashboardRoute = () => {
+export const HeoresRouting = () => {
     return (
         <>
             <Navbar />
@@ -14,7 +14,7 @@ export const DashboardRoute = () => {
                 <Routes>
                     <Route path="dc" element={<DcPage />} />
                     <Route path="marvel" element={<MarvelPage />} />
-                    <Route path="hero/:id" element={<HeroPage />} />
+                    <Route path="hero/:id" element={<HeroDetailPage />} />
                     <Route path="search" element={<SearchPage />} />
                     <Route path="/" element={<MarvelPage />} />
                 </Routes>

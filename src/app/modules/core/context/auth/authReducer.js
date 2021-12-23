@@ -1,10 +1,5 @@
 
-// const state = {
-//     name: "Valp",
-//     logged: true
-// };
-
-import { types } from "@types/types";
+import { types } from "@core/types/types";
 
 export const authReducer = (state = {}, action) => {
 

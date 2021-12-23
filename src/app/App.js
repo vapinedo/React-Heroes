@@ -1,7 +1,8 @@
-import { AuthContext } from '@auth/authContext';
-import { AppRouter } from '@app/AppRouter';
+import "./App.css";
+import { AppRouting } from '@app/AppRouting';
 import { useEffect, useReducer } from 'react';
-import { authReducer } from '@auth/authReducer';
+import { AuthContext } from '@core/context/auth/authContext';
+import { authReducer } from '@core/context/auth/authReducer';
 
 const init = () => {
   return JSON.parse(localStorage.getItem("user")) || { logged: false };
@@ -21,7 +22,7 @@ export function App() {
       user,
       dispatch
     }}>
-      <AppRouter />
+      <AppRouting />
     </AuthContext.Provider>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { types } from "@types/types";
+import { types } from "@core/types/types";
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '@auth/authContext';
+import { AuthContext } from '@core/context/auth/authContext';
 
 export const LoginPage = () => {
 

@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { useParams, useNavigate, Navigate } from "react-router-dom";
-import { getHeroById } from '@models/HeroModel';
+import { getHeroById } from '@core/services/HeroService';
 
-export const HeroPage = () => {
+export const HeroDetailPage = () => {
 
     const { id } = useParams();
     const hero = useMemo(() => getHeroById(id), [id]); 

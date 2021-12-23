@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react'
+import React, { useMemo } from 'react';
 import queryString from "query-string";
-import { useForm } from '@hooks/useForm';
-import { HeroCard } from '@components/HeroCard';
-import { getHeroByName } from '@models/HeroModel';
+import { useForm } from '@core/hooks/useForm';
+import { getHeroByName } from '@core/services/HeroService';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { HeroCard } from '@feature/heroes/components/HeroCard';
 
 export const SearchPage = () => {
 
