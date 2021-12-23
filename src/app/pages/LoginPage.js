@@ -14,7 +14,9 @@ export const LoginPage = () => {
             payload: { name: "Valp" }
         };
         dispatch(action);
-        navigate("/marvel", { replace: true });
+
+        const lastPath = localStorage.getItem("lastPath") || "/marvel";
+        navigate(lastPath, { replace: true });
     };
     
     return (
